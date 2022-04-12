@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPIG CARD</title>
+    <style>
+      body {
+        display: flex;
+        margin-top: 100px;
+        justify-content: space-around;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      div {
+        padding-bottom: 30px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      h4 {
+        font-weight: normal;
+        text-align: center;
+      }
+
+      span {
+        font-weight: bolder;
+        margin: 35px;
+        text-align: left;
+        font-size: larger;
+      }
+
+      .strike {
+        font-weight: normal;
+        text-decoration: line-through;
+        position: relative;
+        left: 1rem;
+        font-size: normal;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var data = [
+    {
+      imgUrl:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+      name: "LATEST MENS SNEAKER",
+      price: "$25.00",
+      strikedOffPrice: "$95.00",
+    },
+    {
+      imgUrl:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+      name: "LATEST MENS SNEAKER",
+      price: "$35.00",
+      strikedOffPrice: "$100.00",
+    },
+    {
+      imgUrl:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+      name: "LATEST MENS SNEAKER",
+      price: "$35.00",
+      strikedOffPrice: "$100.00",
+    },
+    {
+      imgUrl:
+        "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+      name: "LATEST MENS SNEAKER",
+      price: "$35.00",
+      strikedOffPrice: "$100.00",
+    },
+  ];
+
+  data.map(function (elem) {
+    var box = document.createElement("div");
+    var image = document.createElement("img");
+    image.setAttribute("src", elem.imgUrl);
+
+    var head4 = document.createElement("h4");
+    head4.textContent = elem.name;
+
+    var price = document.createElement("span");
+    price.textContent = elem.price;
+
+    var striked = document.createElement("span");
+    striked.setAttribute("class", "strike");
+    striked.textContent = elem.strikedOffPrice;
+
+    box.append(image, head4, price, striked);
+    var body = document.querySelector("body");
+    body.append(box);
+  });
+</script>

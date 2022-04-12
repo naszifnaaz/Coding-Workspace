@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zig Zag</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                margin: 20px;
+            }
+            .container{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+
+            .box
+            {
+                width: 20%;
+                height: 200px;
+                background:teal;
+                margin: 0 30px;
+                border-radius: 5px;
+            }
+            .big-box{
+                flex-grow: 2;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="container">
+                <div class="box"></div>
+                <div class="box big-box"></div>
+                <div class="box"></div>
+            </div>
+
+            <div class="container">
+                <div class="box big-box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box big-box"></div>
+            </div>
+
+            
+        </div>
+    </body>
+</html>

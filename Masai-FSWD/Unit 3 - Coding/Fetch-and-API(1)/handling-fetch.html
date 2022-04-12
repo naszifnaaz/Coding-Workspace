@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handling Fetch</title>
+  </head>
+  <body>
+    <p>We can handle fetch is two ways</p>
+    <p>1. Using .then and .catch</p>
+    <p>2. Using async await</p>
+  </body>
+</html>
+
+<script>
+  // 1st way using .then and .catch
+
+  fetch("https://reqres.in/api/users?page=2")
+    .then(function (res) {
+      res.json().then(function (res) {
+        console.log(res.data);
+      });
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+
+  // we need two .then since there are two promises, one for the network request and second one for the data stream
+
+  //2nd way using async await
+  async function handleReq() {
+    var res = await fetch("https://reqres.in/api/users?page=2");
+    var myData = await res.json();
+    console.log(myData.data);
+  }
+
+  handleReq();
+</script>

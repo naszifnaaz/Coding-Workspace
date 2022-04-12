@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #container {
+        display: flex;
+        width: 550px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin: 100px;
+      }
+
+      img {
+        width: 250px;
+        height: 250px;
+      }
+
+      h4 {
+        margin: 15px;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 15px;
+        word-spacing: 5px;
+        line-height: 1.6;
+        text-align: left;
+      }
+
+      button {
+        margin: 10px 15px;
+        background-color: dodgerblue;
+        padding: 15px;
+        color: white;
+        font-size: 1rem;
+        border-radius: 7px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var box = document.createElement("div");
+  box.setAttribute("id", "container");
+
+  var flex_1 = document.createElement("div");
+  var flex_2 = document.createElement("div");
+
+  var image = document.createElement("img");
+  image.setAttribute(
+    "src",
+    "https://i.pinimg.com/originals/4e/0a/9c/4e0a9c6e98a2516409668da1e139258e.png"
+  );
+
+  flex_1.append(image);
+
+  var head4 = document.createElement("h4");
+  head4.textContent = "Alice Liddel";
+
+  var para = document.createElement("p");
+  para.textContent =
+    "Alice is a freelance web designer and developer based in London. She is specialised in HTML5, CSS3, JavaScript, Bootstrap, etc.";
+
+  var button = document.createElement("button");
+  button.textContent = "View Profile";
+
+  console.log(flex_1, flex_2);
+
+  flex_2.append(head4, para, button);
+  box.append(flex_1, flex_2);
+  document.querySelector("body").append(box);
+</script>

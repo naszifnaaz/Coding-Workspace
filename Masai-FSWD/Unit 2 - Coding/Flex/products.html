@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Catalog</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body{
+                margin: 120px 100px 0 100px;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(248, 244, 248);
+            }
+
+            #container{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .box{
+                width: 30%;
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                border-radius: 7px;
+                margin-bottom: 30px;
+                
+            }
+
+            .title{
+                font-size: larger;
+                font-weight: bold;
+                display: inline-block;
+                margin: 20px;
+            }
+            .title-price{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-right: 20px;
+            }
+
+            .price{
+                display: inline-block;
+                font-weight: bolder;
+                color: darkorange;
+                
+            }
+
+            .desc{
+                margin: 20px 20px;
+                font-size: medium;
+                color: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <!-- Row 1 -->
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Cappuccino</p>
+                    <p class="price">$49</p>
+                </div>
+                
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Americano</p>
+                    <p class="price">$52</p>
+                </div>
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Espresso</p>
+                    <p class="price">$32</p>
+                </div>
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <!-- Row 2 -->
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Macchiato</p>
+                    <p class="price">$45</p>
+                </div> 
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Mocha</p>
+                    <p class="price">$40</p>
+                </div> 
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Coffee Latte</p>
+                    <p class="price">$44</p>
+                </div>
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <!-- Row 3 -->
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Piccolo Latte</p>
+                    <p class="price">$30</p>
+                </div>
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Ristretto</p>
+                    <p class="price">$35</p>
+                </div>
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+            <div class="box">
+                <div class="title-price">
+                    <p class="title">Affogato</p>
+                    <p class="price">$49</p>
+                </div>
+                <p class="desc">Usage of the internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        
+    </body>
+</html>

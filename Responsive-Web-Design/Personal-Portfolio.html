@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    body {
+      background: #c9d6ff; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #e2e2e2,
+        #c9d6ff
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #e2e2e2,
+        #c9d6ff
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    #navbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      position: fixed;
+      width: 100vw;
+    }
+    #logo {
+      width: 75px;
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    #navbar li {
+      display: inline-block;
+      padding-right: 1.5rem;
+    }
+    #navbar a {
+      text-decoration: none;
+      color: black;
+    }
+    #navbar li:hover {
+      font-weight: bold;
+    }
+    #welcome-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #title {
+      font-size: 3rem;
+      font-family: monospace;
+      margin: 0.5rem 0;
+    }
+    #desc {
+      font-size: 1.2rem;
+    }
+    /*  */
+    #projects {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin-block: 2rem;
+      gap: 2rem;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .project-tile {
+      display: flex;
+      flex-direction: column;
+      width: clamp(20rem, calc(20rem + 2vw), 22rem);
+      overflow: hidden;
+      box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+      border-radius: 1em;
+      background: #ece9e6;
+      background: white;
+    }
+
+    .card__body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      align-self: flex-start;
+      padding: 0.25em 0.75em;
+      border-radius: 1em;
+      font-size: 0.75rem;
+    }
+
+    .tag + .tag {
+      margin-left: 0.5em;
+    }
+
+    .tag-blue {
+      background: #56ccf2;
+      background: linear-gradient(to bottom, #2f80ed, #56ccf2);
+      color: #fafafa;
+    }
+
+    .tag-brown {
+      background: #d1913c;
+      background: linear-gradient(to bottom, #ffd194, #d1913c);
+      color: #fafafa;
+    }
+
+    .tag-red {
+      background: #cb2d3e;
+      background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+      color: #fafafa;
+    }
+
+    .card__body h4 {
+      font-size: 1.5rem;
+      text-transform: capitalize;
+    }
+
+    .card__footer {
+      display: flex;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    .user {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .user__image {
+      border-radius: 50%;
+    }
+
+    .user__info > small {
+      color: #666;
+    }
+    #button {
+      margin: 2rem;
+      padding: 10px 0;
+      background-color: black;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    #contact {
+      display: flex;
+      height: 50vh;
+      align-items: center;
+      justify-content: center;
+    }
+    #contact img {
+      width: 100px;
+      margin-left: 1rem;
+    }
+    @media screen and (max-width: 900px) {
+      #playstation {
+        padding-top: 100px;
+        flex-direction: column;
+      }
+    }
+  </style>
+  <body>
+    <nav id="navbar">
+      <img
+        src="https://t4.ftcdn.net/jpg/03/43/41/13/360_F_343411393_fLbmsSuDyffk9HSaa8RMMTpQQBfBnlzJ.jpg"
+        alt="logo"
+        id="logo"
+      />
+      <ul id="nav-links">
+        <a href="#welcome-section"><li>Home</li></a>
+        <a href="#projects"><li>Projects</li></a>
+        <a href="#"><li>Contact</li></a>
+      </ul>
+    </nav>
+    <div id="welcome-section">
+      <h1 id="title">Hi, I'am Nasif <span id="wave">👋</span></h1>
+      <p id="desc">Aspiring Full Stack Web Developer</p>
+    </div>
+    <div id="projects">
+      <div class="container">
+        <div class="project-tile">
+          <div class="card__header">
+            <img
+              src="https://nasifnaaz.xyz/assets/facialemotion-logo.jpg"
+              alt="card__image"
+              class="card__image"
+              width="600"
+            />
+          </div>
+          <div class="card__body">
+            <span class="tag tag-blue">Machine Learning</span>
+            <h4>Facial Emotion Recognition</h4>
+            <p>
+              FER is a project that make use of Machine Learning techniques and
+              Computer vison to accurately determine the emotion of users in
+              real time using a camera module.
+            </p>
+          </div>
+          <button id="button">
+            <a href="https://nasifnaaz.xyz/">GitHub Repo</a>
+          </button>
+        </div>
+        <div class="project-tile">
+          <div class="card__header">
+            <img
+              src="https://nasifnaaz.xyz/assets/modmanager-logo.jpg"
+              alt="card__image"
+              class="card__image"
+              width="600"
+            />
+          </div>
+          <div class="card__body">
+            <span class="tag tag-brown">Game Development</span>
+            <h4>OpenMW Mod Manager</h4>
+            <p>
+              OpenMW has no GUI for mod directory installation and management.
+              So i created Mod Manager plugin to export your VFS, plugin
+              selection and load order to OpenMW.
+            </p>
+          </div>
+          <button id="button">
+            <a href="https://nasifnaaz.xyz/">GitHub Repo</a>
+          </button>
+        </div>
+        <div class="project-tile">
+          <div class="card__header">
+            <img
+              src="https://nasifnaaz.xyz/assets/onlinelibraryportal-logo.jpg"
+              alt="card__image"
+              class="card__image"
+              width="600"
+            />
+          </div>
+          <div class="card__body">
+            <span class="tag tag-red">Web Development</span>
+            <h4>Online Library Portal</h4>
+            <p>
+              An interactive web portal for automating various manual processes
+              done by librarian. The system keep track of all the actions
+              related in a GUI based web application.
+            </p>
+          </div>
+          <button id="button">
+            <a href="https://nasifnaaz.xyz/">GitHub Repo</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="contact">
+      <a href="https://github.com/naszifnaaz" target="_blank" id="profile-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/nasifnaaz/"
+        target="_blank"
+        id="profile-link"
+      >
+        <img
+          src="https://brandlogos.net/wp-content/uploads/2016/06/linkedin-logo-512x512.png"
+          alt=""
+        />
+      </a>
+      <a
+        href="https://www.freecodecamp.org/naszifnaaz"
+        target="_blank"
+        id="profile-link"
+      >
+        <img
+          src="https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_small.svg"
+          alt=""
+        />
+      </a>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>

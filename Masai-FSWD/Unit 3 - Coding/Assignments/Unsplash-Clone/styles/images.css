@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+}
+
+#main {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  width: 600px;
+  height: 400px;
+  box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px,
+    rgb(226, 215, 215) 0px 0px 0px 3px;
+}
+
+.user {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}

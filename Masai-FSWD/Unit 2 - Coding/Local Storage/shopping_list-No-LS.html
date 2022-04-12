@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <style>
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+      table {
+        margin: 10px 0;
+      }
+      button {
+        display: block;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="item">Enter Item</label>
+      <input type="text" placeholder="Enter Item" value="" id="item" />
+      <label for="quantity">Enter Quantity</label>
+      <input
+        type="number"
+        placeholder="Enter Quantity"
+        value=""
+        id="quantity"
+      />
+      <input type="submit" value="Add Item" />
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  var submitButton = document.querySelector("form");
+  submitButton.addEventListener("submit", submitFunction);
+
+  var shopList = [];
+  function submitFunction(e) {
+    e.preventDefault();
+    var item = document.getElementById("item").value;
+    var quantity = document.getElementById("quantity").value;
+
+    console.log(item, quantity);
+
+    var shopItem = {
+      itemName: item,
+      itemQty: quantity,
+    };
+    shopList.push(shopItem);
+    document.querySelector("tbody").innerHTML = "";
+    shopList.map(function (elem) {
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      td1.textContent = elem.itemName;
+      var td2 = document.createElement("td");
+      td2.textContent = elem.itemQty;
+      tr.append(td1, td2);
+      document.querySelector("tbody").append(tr);
+    });
+  }
+</script>

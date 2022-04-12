@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        /* border: 1px solid; */
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: black;
+        color: white;
+      }
+
+      #logo {
+        margin-left: 1rem;
+        font-weight: bold;
+      }
+
+      #nav-items li {
+        display: inline-block;
+        margin-right: 1rem;
+      }
+
+      a {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav-container"></div>
+  </body>
+</html>
+
+<script type="module">
+  let container = document.getElementById("nav-container");
+  import navbar from "./components/navbar.js";
+  container.innerHTML = navbar();
+</script>

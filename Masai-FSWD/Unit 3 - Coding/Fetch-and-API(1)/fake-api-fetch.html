@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var url = "https://fakestoreapi.com/products";
+  var myRequest = fetch(url);
+  console.log(myRequest);
+  //using then and catch
+  myRequest
+    //promise for network request
+    .then(function (res) {
+      return res.json();
+    })
+    // promise for data stream
+    .then(function (res) {
+      console.log(res);
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+
+  //using async await
+  async function fakeapiReq() {
+    try {
+      var res = await fetch(url);
+      var data = await res.json();
+      //   console.log(data);
+      displayData(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  function displayData(data) {
+    console.log(data);
+    data.forEach(function (elem) {
+      console.log(elem);
+    });
+  }
+
+  fakeapiReq();
+</script>

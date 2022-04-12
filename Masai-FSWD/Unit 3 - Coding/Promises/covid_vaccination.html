@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid Vaccination using Promise</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter Name" id="name" />
+    <input type="button" onclick="Register()" value="Register" />
+  </body>
+</html>
+
+<script>
+  let queue = ["John", "Luke", "Corey", "Sarah", "Ariana"];
+
+  function Register() {
+    var name = document.querySelector("#name").value;
+    queue.push(name);
+
+    let message = `${name} is registered for vaccination.`;
+    alert(message);
+
+    let myPromise = new Promise(function (resolve, reject) {
+      var check = setInterval(function () {
+        if (queue[0] == name) {
+          resolve(`it's your turn ${name}`);
+          clearInterval(check);
+        }
+      }, 1000);
+    });
+
+    myPromise.then(function (status) {
+      alert(status);
+    });
+  }
+
+  function Vaccinating() {
+    if (queue.length === 0) {
+      clearInterval(vaccinate);
+    }
+    console.log(queue);
+    queue.shift();
+  }
+
+  var vaccinate = setInterval(Vaccinating, 2000);
+</script>

@@ -1,0 +1,26 @@
+#form {
+    width: 20%;
+    border: 2px solid;
+  }
+  
+  #button {
+    padding: 3px 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  li {
+    border: 1px solid;
+    border-collapse: collapse;
+    list-style-type: none;
+    width: fit-content;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  img {
+    display: block;
+  }
+  

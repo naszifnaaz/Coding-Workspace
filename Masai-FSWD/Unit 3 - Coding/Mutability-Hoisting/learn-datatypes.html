@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datatypes Learning App</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      button {
+        background-color: dodgerblue;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        margin-left: 10px;
+      }
+      #button-flex {
+        display: flex;
+        justify-content: center;
+      }
+      .content {
+        margin: 100px;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select a Datatype you want to know about</h1>
+    <div id="button-flex">
+      <button onclick="objectInfo()">Object</button>
+      <button onclick="arrayInfo()">Array</button>
+      <button onclick="functionInfo()">Function</button>
+      <button onclick="stringInfo()">String</button>
+      <button onclick="numberInfo()">Number</button>
+      <button onclick="nullInfo()">null</button>
+      <button onclick="undefinedInfo()">undefined</button>
+    </div>
+
+    <div class="content"></div>
+  </body>
+</html>
+
+<script>
+  //OBJECT
+  function objectInfo() {
+    var content = document.querySelector(".content");
+    content.innerHTML = "";
+    var h2 = document.createElement("h2");
+    h2.textContent = "OBJECT";
+    var ul = document.createElement("ul");
+
+    var li1 = document.createElement("li");
+    li1.textContent = "In JavaScript, almost everything is an object.";
+
+    var li2 = document.createElement("li");
+    li2.textContent =
+      "An object can be created with {} curly brackets with optional list of properties.";
+
+    var li3 = document.createElement("li");
+    li3.textContent = "A property is a key value pair.";
+
+    var li5 = document.createElement("li");
+    li5.textContent = "An object is an abstarct datatype.";
+
+    var li6 = document.createElement("li");
+    li6.textContent = "An object is a mutable datatype.";
+
+    ul.append(li1, li2, li3, li5, li6);
+    content.append(h2, ul);
+  }
+
+  //FUNCTION
+  function functionInfo() {
+    var content = document.querySelector(".content");
+    content.innerHTML = "";
+    var h2 = document.createElement("h2");
+    h2.textContent = "FUNCTION";
+    var ul = document.createElement("ul");
+
+    var li1 = document.createElement("li");
+    li1.textContent = "Functions are the building blocks of the program.";
+
+    var li2 = document.createElement("li");
+    li2.textContent =
+      "Functions allow the code to be called many times without repetition.";
+
+    var li3 = document.createElement("li");
+    li3.textContent =
+      "We can pass arbitary data to functions using parameters.";
+
+    var li4 = document.createElement("li");
+    li4.textContent =
+      "A function can return a value to the corresponding calling function.";
+
+    var li5 = document.createElement("li");
+    li5.textContent = "A function in javascript is also an object.";
+
+    ul.append(li1, li2, li3, li4, li5);
+    content.append(h2, ul);
+  }
+
+  //ARRAY
+  function arrayInfo() {
+    var content = document.querySelector(".content");
+    content.innerHTML = "";
+    var h2 = document.createElement("h2");
+    h2.textContent = "ARRAY";
+    var ul = document.createElement("ul");
+
+    var li1 = document.createElement("li");
+    li1.textContent =
+      "Array is a data structure used to store ordered collections.";
+
+    var li2 = document.createElement("li");
+    li2.textContent = "An arry can be created with [] square brackets.";
+
+    var li3 = document.createElement("li");
+    li3.textContent = "Array elements are accessed using indexes.";
+
+    var li4 = document.createElement("li");
+    li4.textContent = "The array index starts from zero.";
+
+    var li5 = document.createElement("li");
+    li5.textContent = "An array is an abstarct datatype.";
+
+    var li6 = document.createElement("li");
+    li6.textContent = "An array is a mutable datatype.";
+
+    ul.append(li1, li2, li3, li4, li5, li6);
+    content.append(h2, ul);
+  }
+
+  //STRING
+  function stringInfo() {
+    var content = document.querySelector(".content");
+    content.innerHTML = "";
+    var h2 = document.createElement("h2");
+    h2.textContent = "STRING";
+    var ul = document.createElement("ul");
+
+    var li1 = document.createElement("li");
+    li1.textContent = "In Javascript, textual data is stored as strings.";
+
+    var li2 = document.createElement("li");
+    li2.textContent = "Strings are primitive datatypes.";
+
+    var li3 = document.createElement("li");
+    li3.textContent = "Strings are immutable datatypes.";
+
+    var li4 = document.createElement("li");
+    li4.textContent =
+      "We can determine the length of a string, using length property.";
+
+    var li5 = document.createElement("li");
+    li5.textContent = "A string must be enclosed by quotes.";
+
+    ul.append(li1, li2, li3, li4, li5);
+    content.append(h2, ul);
+  }
+
+  //NUMBER
+  function numberInfo() {
+    var content = document.querySelector(".content");
+    content.innerHTML = "";
+    var h2 = document.createElement("h2");
+    h2.textContent = "NUMBER";
+    var ul = document.createElement("ul");
+
+    var li1 = document.createElement("li");
+    li1.textContent = "Number are primitive datatypes.";
+
+    var li2 = document.createElement("li");
+    li2.textContent =
+      "The number type represents both integer and floating point numbers.";
+
+    var li3 = document.createElement("li");
+    li3.textContent =
+      "There is special numeric values such as Infinity, NaN, -Infinity etc:";
+
+    var li4 = document.createElement("li");
+    li4.textContent =
+      "There are many operations for numbers, e.g. multiplication *, division /, addition +, subtraction -, and so on.";
+
+    var li5 = document.createElement("li");
+    li5.textContent = "A string must be enclosed by quotes.";
+
+    ul.append(li1, li2, li3, li4);
+    content.append(h2, ul);
+  }
+  //NULL
+  function nullInfo() {
+    var content = document.querySelector(".content");
+    content.innerHTML = "";
+    var h2 = document.createElement("h2");
+    h2.textContent = "NULL";
+    var ul = document.createElement("ul");
+
+    var li1 = document.createElement("li");
+    li1.textContent =
+      "The special value does not belong to any of the other types.";
+
+    var li2 = document.createElement("li");
+    li2.textContent =
+      "It forms a separate type of its own which contains only the null value.";
+
+    var li3 = document.createElement("li");
+    li3.textContent = "null value represents nothing, empty or value unknown";
+
+    var li4 = document.createElement("li");
+    li4.textContent =
+      "The value null represents the intentional absence of any object value.";
+
+    var li5 = document.createElement("li");
+    li5.textContent =
+      " It is one of JavaScript's primitive values and is treated as falsy for boolean operations.";
+
+    ul.append(li1, li2, li3, li4, li5);
+    content.append(h2, ul);
+  }
+  //UNDEFINED
+  function undefinedInfo() {
+    var content = document.querySelector(".content");
+    content.innerHTML = "";
+    var h2 = document.createElement("h2");
+    h2.textContent = "UNDEFINED";
+    var ul = document.createElement("ul");
+
+    var li1 = document.createElement("li");
+    li1.textContent =
+      "The global undefined property represents the primitive value undefined.";
+
+    var li2 = document.createElement("li");
+    li2.textContent = " It is one of JavaScript's primitive types.";
+
+    var li3 = document.createElement("li");
+    li3.textContent = "The meaning of undefined is value not assigned.";
+
+    var li4 = document.createElement("li");
+    li4.textContent =
+      "If a variable is declared, but not assigned then its value is undefined.";
+
+    ul.append(li1, li2, li3, li4);
+    content.append(h2, ul);
+  }
+</script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registaration</title>
+        <style>
+            body{
+                width: 80%;
+                margin: auto;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            h1,h2,h3,h4{
+                font-weight: normal;
+            }
+            label
+            {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .left
+            {
+                margin-top: 100px;
+                width:50%;
+                display: inline-block;
+                vertical-align: top;
+                padding: 50px;
+
+            }
+            .right
+            {
+                margin-top: 100px;
+                display: inline-block;
+                background-color: black;
+                color: white;
+                padding: 50px 50px;
+            }
+
+            .name-form,.email-form,.phone{
+                font-size: larger;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+
+            input{
+                width: 400px;
+                height: 30px;
+                border: 2px solid black;
+            }
+
+            button{
+                width: 250px;
+                height: 50px;
+                background-color: black;
+                color: white;
+                font-size: medium;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="left">
+            <div class="name-form">
+                <label for="name">NAME</label>
+                <input type="text" id="name">
+            </div>
+
+            <div class="email-form">
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="phone">
+                <label for="phone">MOBILE</label>
+                <input type="phone" name="phone" id="phone">
+                <p style="font-weight: normal; margin-top: 5px; color: red;">Enter a valid mobile</p>
+            </div>
+
+            <div class="button">
+                <button>REGISTER</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="name">
+                <h2>NAME</h2>
+                <h1 style="font-size: 50px;">MASAI</h1>
+            </div>
+
+            <div class="email">
+                <h2>EMAIL</h2>
+                <h3>email@masai.school.com</h3>
+            </div>
+
+            <div class="mobile">
+                <h2>MOBILE</h2>
+                <h2>9876543210</h2>
+            </div>
+        </div>
+    </body>
+</html>

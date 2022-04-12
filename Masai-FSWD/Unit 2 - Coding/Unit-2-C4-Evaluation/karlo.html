@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      label,
+      input,
+      select,
+      textarea {
+        display: block;
+        margin: 10px;
+      }
+      table,
+      td,
+      th,
+      tr {
+        border: 1px solid black;
+        padding: 5px;
+        border-collapse: collapse;
+        margin: 50px 10px;
+      }
+
+      #container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      #flex-1,
+      #flex-2 {
+        padding: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      @media screen and (max-width: 850px) {
+        #container {
+          flex-direction: column;
+        }
+        #flex-1 {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading">KARLO TICKETS</h1>
+    <div id="container">
+      <div id="flex-1">
+        <form id="karloTickets">
+          <label for="category">Choose Category</label>
+          <select name="TicketCategory" id="category">
+            <option value="refund">Refund</option>
+            <option value="missing">Item Missing</option>
+            <option value="status">Order Status</option>
+            <option value="delivery">Delivery</option>
+            <option value="feedback">Feedback</option>
+          </select>
+
+          <label for="description">Enter Ticket Description</label>
+          <textarea
+            name="ticketBody"
+            id="description"
+            cols="30"
+            rows="10"
+            placeholder="Enter Ticket Body"
+          ></textarea>
+          <label for="datestamp">Enter Date</label>
+          <input type="date" id="datestamp" />
+          <label for="ticketnumber">Enter Ticket Number</label>
+          <input type="number" id="ticketnumber" placeholder="Ticket Number" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+      <div id="flex-2">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Ticket Number</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#karloTickets").addEventListener("submit", addTicket);
+
+  var ticketList = JSON.parse(localStorage.getItem("karlo")) || [];
+  renderTable(ticketList);
+
+  function addTicket(e) {
+    e.preventDefault();
+    var category = document.getElementById("category").value;
+    var description = document.getElementById("description").value;
+    var date = document.getElementById("datestamp").value;
+    var ticketNo = document.getElementById("ticketnumber").value;
+
+    var ticketItem = {
+      cat: category,
+      desc: description,
+      date: date,
+      tNo: ticketNo,
+    };
+
+    ticketList.push(ticketItem);
+
+    renderTable(ticketList);
+  }
+  //Rendering Table
+  function renderTable(ticketList) {
+    document.querySelector("tbody").innerHTML = "";
+    ticketList.map(function (elem) {
+      var tr = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      td1.textContent = elem.cat;
+
+      var td2 = document.createElement("td");
+      td2.textContent = elem.desc;
+
+      var td3 = document.createElement("td");
+      td3.textContent = String(elem.date);
+
+      var td4 = document.createElement("td");
+      td4.textContent = elem.tNo;
+
+      tr.append(td1, td2, td3, td4);
+      document.querySelector("tbody").append(tr);
+
+      //Writing to localStorage
+      localStorage.setItem("karlo", JSON.stringify(ticketList));
+    });
+  }
+</script>

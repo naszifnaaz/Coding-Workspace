@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throw Dice</title>
+    <style>
+      body {
+        font-family: serif;
+      }
+      #container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      button {
+        padding: 15px;
+        background-color: dodgerblue;
+        border: 0;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      h1 {
+        color: tomato;
+      }
+      h2 {
+        font-size: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>THROW DICE</h1>
+      <h2 id="number"></h2>
+      <button id="throw">Throw Dice</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  var button = document.querySelector("#throw");
+  button.addEventListener("click", throwDice);
+
+  function throwDice() {
+    var number = document.querySelector("#number");
+    number.textContent = Math.floor(Math.random() * 6) + 1;
+
+    if (number.textContent == "6") number.style.color = "green";
+    else if (number.textContent == "1") number.style.color = "orange";
+    else number.style.color = "red";
+  }
+</script>

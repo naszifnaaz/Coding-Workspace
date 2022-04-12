@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investors</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        margin: 50px 10px;
+        justify-content: space-evenly;
+        font-family: Arial, Helvetica, sans-serif;
+        flex-wrap: wrap;
+      }
+      img {
+        height: 300px;
+        border-radius: 5px;
+      }
+
+      .box {
+        margin: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding-bottom: 30px;
+        border-radius: 10px;
+      }
+
+      h2,
+      h3 {
+        text-align: center;
+      }
+      h2 {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      h3 {
+        margin-top: 5px;
+        color: grey;
+        font-weight: normal;
+        font-size: 1rem;
+      }
+      /* I am using flex wrap so the page is responsive by itself, so not adding media queries */
+      /* @media only screen and (max-width : 600px)
+      {
+        body{
+          flex-direction: column;
+        }
+      } */
+    </style>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var data = [
+    {
+      name: "Ankush Sachdeva",
+      image:
+        "https://d27028dliefpk3.cloudfront.net/assets/our-investors/ankush-sachdeva-sharechat.jpg",
+      role: "Co-founder and CEO, ShareChat",
+    },
+    {
+      name: "Bhanu Pratap Singh",
+      image:
+        "https://d27028dliefpk3.cloudfront.net/assets/our-investors/bhanu-pratap-singh-sharechat.jpg",
+      role: "Co-founder and CTO, ShareChat",
+    },
+    {
+      name: "Farid Ahsan",
+      image:
+        "https://d27028dliefpk3.cloudfront.net/assets/our-investors/farid-ahsan-sharechat.png",
+      role: "Co-founder and COO, ShareChat",
+    },
+    {
+      name: "Amit Kumar Agarwal",
+      image:
+        "https://d27028dliefpk3.cloudfront.net/assets/our-investors/amit-kumar-agarwal-nobroker.jpg",
+      role: "Founder and CEO, NoBroker",
+    },
+  ];
+
+  data.map(function (elem) {
+    var div = document.createElement("div");
+    div.setAttribute("class", "box");
+
+    var image = document.createElement("img");
+    image.setAttribute("src", elem.image);
+
+    var name = document.createElement("h2");
+    name.textContent = elem.name;
+
+    var role = document.createElement("h3");
+    role.textContent = elem.role;
+
+    div.append(image, name, role);
+
+    document.querySelector("body").append(div);
+  });
+</script>

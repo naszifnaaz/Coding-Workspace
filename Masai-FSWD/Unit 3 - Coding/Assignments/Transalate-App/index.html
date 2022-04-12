@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translate App</title>
+    <script
+      src="https://kit.fontawesome.com/b5e607be6d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <style></style>
+
+  <body>
+    <div id="nav-container">
+      
+    </div>
+    <h1 id="main-title">TRANSLATER</h1>
+    <div id="container">
+      <div id="input-section">
+        <h1 class="header-title">Translate From English</h1>
+        <!--Create button that will run translate text function, give id "translate-btn"-->
+        <!--Create input that will accept text to be translated, give id "input-text"-->
+        <textarea
+          name="from"
+          id="input-text"
+          placeholder="Enter pharase to translate"
+        ></textarea>
+      </div>
+      <button id="translate-btn" onclick="translateText()"><span id="arrow-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></span>Translate</button>
+      <div id="output-section">
+        <p id="translated-text">
+          <!--Show translated text here-->
+          <h1 class="header-title">Translate To Hindi</h1>
+            <textarea name="to" id="ouput-text" placeholder="Translated text will be shown here" ></textarea>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="./script.js" type="module"></script>
+<script src="./translate.js"></script>

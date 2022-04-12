@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trending Movies</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #movies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 2rem 0;
+      }
+
+      .movie {
+        margin: 1rem 0;
+        border: 1px solid;
+        background-color: cadetblue;
+      }
+
+      img {
+        width: 350px;
+        height: 500px;
+      }
+
+      .title {
+        font-weight: bold;
+        margin: 5px 0;
+        text-align: center;
+      }
+
+      .year-rating {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px;
+      }
+
+      #trending-header {
+        text-align: center;
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="trending-header">
+      <h1>TRENDING / POPULAR MOVIES</h1>
+    </div>
+
+    <div id="movies"></div>
+  </body>
+</html>
+
+<script>
+  async function getTrending() {
+    try {
+      let res = await fetch(
+        "https://api.themoviedb.org/3/discover/movie?api_key=33fbbb970363a7e99f8f21bd5b746ebc&sort_by=popularity.desc&with_genres=28"
+      );
+
+      let data = await res.json();
+      data = data.results;
+      console.log(data);
+      renderTrending(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  getTrending();
+
+  function renderTrending(data) {
+    data.map((elem) => {
+      var movie = document.createElement("div");
+      movie.setAttribute("class", "movie");
+
+      var poster = document.createElement("img");
+      poster.setAttribute("class", "poster");
+      poster.setAttribute(
+        "src",
+        `https://image.tmdb.org/t/p/original/${elem.poster_path}`
+      );
+
+      var title = document.createElement("p");
+      title.setAttribute("class", "title");
+      title.textContent = elem.original_title;
+
+      yearRating = document.createElement("div");
+      yearRating.setAttribute("class", "year-rating");
+
+      var year = document.createElement("p");
+      year.setAttribute("class", "year");
+      year.textContent = elem.release_date;
+
+      var rating = document.createElement("p");
+      rating.setAttribute("class", "rating");
+      rating.textContent = elem.vote_average;
+
+      yearRating.append(year, rating);
+
+      movie.append(poster, title, yearRating);
+
+      var movies = document.getElementById("movies");
+      movies.append(movie);
+    });
+  }
+</script>

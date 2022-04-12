@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bozaz Products</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-around;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      table,
+      td,
+      th,
+      tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        margin: 20px 0;
+      }
+      @media only screen and (max-width: 900px) {
+        body {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-1">
+      <form>
+        <label for="productCategory">Select Category</label>
+        <select name="category" id="productCategory">
+          <option value="Electronics">Electronics</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Home Appliances">Home Appliances</option>
+          <option value="Books">Books</option>
+        </select>
+        <label for="title">Product Title</label>
+        <input type="text" id="title" placeholder="Title" />
+        <br />
+        <label for="description">Product Description</label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Enter Product Description"
+        ></textarea>
+        <label for="price">Price</label>
+        <input type="number" id="price" placeholder="Price" value="" />
+        <br /><br />
+        <input type="submit" value="Submit" id="submit" />
+      </form>
+    </div>
+
+    <div class="container-2">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script>
+  var submitButton = document.getElementById("submit");
+  submitButton.addEventListener("click", addItem);
+
+  var bozazList = JSON.parse(localStorage.getItem("bozaz")) || [];
+  renderTable(bozazList);
+
+  function addItem(e) {
+    e.preventDefault();
+    var category = document.getElementById("productCategory").value;
+    var title = document.getElementById("title").value;
+    var description = document.getElementById("description").value;
+    var price = document.getElementById("price").value;
+
+    var bozazItem = {
+      itemCategory: category,
+      itemTitle: title,
+      itemDesc: description,
+      itemPrice: price,
+    };
+
+    bozazList.push(bozazItem);
+
+    renderTable(bozazList);
+  }
+
+  function renderTable(bozazList) {
+    document.querySelector("tbody").innerHTML = "";
+    console.log(bozazList);
+    bozazList.map(function (elem) {
+      var tr = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      td1.textContent = elem.itemCategory;
+
+      var td2 = document.createElement("td");
+      td2.textContent = elem.itemTitle;
+
+      var td3 = document.createElement("td");
+      td3.textContent = elem.itemDesc;
+
+      var td4 = document.createElement("td");
+      td4.textContent = elem.itemPrice;
+
+      tr.append(td1, td2, td3, td4);
+      console.log(tr);
+      document.querySelector("tbody").append(tr);
+
+      localStorage.setItem("bozaz", JSON.stringify(bozazList));
+    });
+  }
+</script>

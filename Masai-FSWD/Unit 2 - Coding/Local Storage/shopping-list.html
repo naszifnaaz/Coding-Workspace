@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List With Local Storage</title>
+    <style>
+      label,
+      input {
+        display: block;
+        margin: 10px 0;
+      }
+
+      table,
+      td,
+      tr,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Form -->
+    <form>
+      <label for="item">Item</label>
+      <input type="text" placeholder="Enter Item" id="item" value="" />
+      <label for="quantity">Quantity</label>
+      <input type="number" placeholder="Quantity" id="quantity" value="" />
+      <input type="submit" value="Add Item" />
+    </form>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  var addItemButton = document.querySelector("form");
+  addItemButton.addEventListener("submit", shopFunction);
+
+  var shopList = JSON.parse(localStorage.getItem("ShoppingList")) || [];
+  createTable(shopList);
+  // Add Item Function
+  function shopFunction(e) {
+    e.preventDefault();
+    var item = document.getElementById("item").value;
+    var quantity = document.getElementById("quantity").value;
+
+    var itemList = {
+      itemName: item,
+      itemQty: quantity,
+    };
+
+    shopList.push(itemList);
+    createTable(shopList);
+  }
+
+  //Creating Table
+  function createTable(shopList) {
+    document.querySelector("tbody").innerHTML = "";
+    shopList.map(function (elem, index) {
+      var tr = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      td1.textContent = elem.itemName;
+
+      var td2 = document.createElement("td");
+      td2.textContent = elem.itemQty;
+
+      var td3 = document.createElement("td");
+      td3.innerHTML = "<button>Delete</button>";
+
+      td3.addEventListener("click", function () {
+        deleteItem(index);
+      });
+
+      tr.append(td1, td2, td3);
+
+      document.querySelector("tbody").append(tr);
+      localStorage.setItem("ShoppingList", JSON.stringify(shopList));
+    });
+  }
+
+  function deleteItem(index) {
+    console.log("Delete");
+    shopList.splice(index, 1);
+    localStorage.setItem("ShoppingList", JSON.stringify(shopList));
+    createTable(shopList);
+  }
+</script>

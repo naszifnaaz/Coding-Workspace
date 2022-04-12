@@ -1,0 +1,32 @@
+use assignment
+
+db.createCollection("users")
+
+db.users.insertOne({"first_name" : "John","last_name" : "Doe", "email" : "johndoe@gmail.com", "gender" : "male","ip_address" : "127.0.0.1", "age " : "32"})
+
+db.users.insertMany([{"first_name" : "Geralt", "last_name" : "Jr","email" : "geraltjr@gmail.com","gender" : "male","ip_address" : "127.0.0.2","age" : "28"}, {"first_name" : "Sofia", "last_name" : "Vargera","email" : "sofiavargera@gmail.com","gender" : "female","ip_address" : "127.0.0.3","age":"25"}])
+
+
+db.users.insertMany([{"first_name" : "Corey", "last_name" : "Schafer","email" : "coreyschafer@gmail.com","gender" : "male","ip_address" : "127.0.0.3","age" : "29"},{"first_name" : "Ariana", "last_name" : "Grande","email" : "arianagrande@gmail.com","gender" : "female","ip_address" : "127.0.0.4","age":"26"}])
+
+
+db.users.insertMany([{"first_name" : "Steve", "last_name" : "Harvey","email" : "steveharvey@gmail.com","gender" : "male","ip_address" : "127.0.0.5","age" : "42"},{"first_name" : "Billie", "last_name" : "Eilish","email" : "billieeilish@gmail.com","gender" : "female","ip_address" : "127.0.0.6","age":"24"}])
+
+db.users.insertMany([{"first_name" : "Tom", "last_name" : "Cruise","email" : "tomcruise@gmail.com","gender" : "male","ip_address" : "127.0.0.7","age" : "38"},{"first_name" : "Scarlett", "last_name" : "Johansson","email" : "scarlettjohan@gmail.com","gender" : "female","ip_address" : "127.0.0.8","age":"30"}])
+
+db.users.find({}).pretty()
+
+db.users.findOne({"age" : "24"})
+
+db.users.update({"_id" : ObjectId("6226f08356732412ab56ef84")},{$set:{"last_name" : "of Rivia"}})
+
+db.users.update({"_id" : ObjectId("6226ef0256732412ab56ef83")},{$set: {"first_name" : "Harry", "last_name" : "Styles"}})
+
+db.users.updateMany({"age" : {$gt : "30"}},{$set : {"prime" : "available"}})
+
+db.users.deleteOne({"_id" :  ObjectId("6226ef0256732412ab56ef83")})
+
+db.users.deleteMany({"gender" : "male"})
+
+db.dropDatabase()
+

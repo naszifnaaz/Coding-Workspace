@@ -1,0 +1,168 @@
+<!-- Movie App with Debouncing Search / Closures -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+      body {
+        background-color: black;
+      }
+      main {
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        align-items: center;
+      }
+      #logo {
+        color: white;
+        font-weight: bold;
+      }
+
+      #search input {
+        width: 500px;
+        padding: 10px;
+      }
+      .movie {
+        background-color: white;
+        padding: 1rem;
+        border: 1px solid;
+        display: flex;
+        flex-direction: row;
+      }
+      .poster {
+        width: 100px;
+        height: 100px;
+      }
+      .conatiner-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .description {
+        color: black;
+      }
+      nav {
+        color: white;
+        font-weight: bold;
+        margin: 1rem 0 0 3rem;
+        position: relative;
+        top: 2rem;
+      }
+      #movies {
+        overflow-y: scroll;
+        background-color: black;
+        width: 500px;
+        color: white;
+        padding-top: 1rem;
+      }
+      .title {
+        padding: 1rem;
+        font-weight: bold;
+      }
+      .release-date {
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>MOVIEBUFF</nav>
+    <main>
+      <div id="logo"></div>
+      <div id="search">
+        <input
+          type="text"
+          placeholder="Search Movie"
+          id="query"
+          oninput="debounce(searchMovies,1000)"
+        />
+        <div id="movies"></div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  async function searchMovies() {
+    var movie = document.getElementById("query").value;
+    console.log(movie);
+    var url = `http://www.omdbapi.com/?apikey=43c66e10&s=${movie}`;
+
+    try {
+      let res = await fetch(url);
+      let data = await res.json();
+      data = data.Search;
+      if (data == undefined) nothingFound();
+      else renderMovies(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  function renderMovies(data) {
+    document.querySelector("#movies").innerHTML = null;
+    data.map(function (elem) {
+      var movie = document.createElement("div");
+      movie.setAttribute("class", "movie");
+
+      var container1 = document.createElement("div");
+      container1.setAttribute("class", "container-1");
+
+      var poster = document.createElement("img");
+      poster.setAttribute("src", elem.Poster);
+      poster.setAttribute("class", "poster");
+
+      var container2 = document.createElement("div");
+      container1.setAttribute("class", "container-2");
+
+      var title = document.createElement("p");
+      title.textContent = elem.Title;
+      title.setAttribute("class", "title");
+
+      var date = document.createElement("p");
+      date.textContent = elem.Year;
+      date.setAttribute("class", "release-date");
+
+      container1.append(poster);
+      container2.append(title, date);
+
+      movie.append(container1, container2);
+
+      var movies = document.querySelector("#movies");
+      movies.style.height = "400px";
+      movies.append(movie);
+
+      //
+      movie.addEventListener("click", function () {
+        localStorage.setItem("currentMovie", JSON.stringify(elem));
+        console.log(elem);
+        window.location.href = "./movie-details.html";
+      });
+    });
+  }
+  let timerID;
+  function debounce(func, delay) {
+    if (timerID) clearTimeout(timerID);
+    timerID = setTimeout(function () {
+      func();
+    }, delay);
+  }
+
+  function nothingFound() {
+    console.log("No Results Found");
+    let movies = document.querySelector("#movies");
+    movies.textContent = "No Results Found";
+    movies.style.fontWeight = "bold";
+  }
+</script>

@@ -1,0 +1,35 @@
+#search-meal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#search-results {
+  margin-left: 460px;
+  border: 1px solid;
+  overflow-y: scroll;
+  width: 40%;
+}
+
+#search {
+  width: 40%;
+  height: 40px;
+}
+
+.result {
+  display: flex;
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 75px;
+  height: 75px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+}

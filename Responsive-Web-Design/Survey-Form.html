@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #main {
+        width: 60%;
+        margin: auto;
+        color: black;
+      }
+      #title {
+        text-align: center;
+        color: black;
+      }
+      #description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">
+        Thank you for taking the time to help us improve the platform
+      </p>
+      <form id="survey-form">
+        <label for="name" id="name-label">Name</label>
+        <input type="text" id="name" placeholder="Enter Name" required />
+        <label for="email" id="email-label">Email</label>
+        <input type="email" placeholder="Enter Email" id="email" required />
+        <label for="number" id="number-label">Age</label>
+        <input
+          type="number"
+          placeholder="Enter Age"
+          id="number"
+          min="18"
+          max="49"
+        />
+        <div id="dropdown-div">
+          <label id="dropdown-label"
+            ><strong>Programming language you are expert at: </strong></label
+          >
+          <select id="dropdown" name="code-lang" class="form">
+            <option value="C">C (Programming Language)</option>
+            <option value="Python">Python</option>
+            <option value="C#">C#</option>
+            <option value="php">PHP</option>
+            <option value="Js">Java Script</option>
+            <option value="Go">Go (Programming Language)</option>
+            <option value="ruby">Ruby on rails</option>
+            <option value="C++">C++</option>
+            <option value="Java">Java</option>
+          </select>
+          <label id="job-label"><b>Employment Status:</b></label>
+          <input
+            type="radio"
+            class="radio-inline"
+            name="gender"
+            value="employed"
+            checked
+          />
+          Full-time job holder.(Employed)<br />
+          <input
+            type="radio"
+            class="radio-inline"
+            name="gender"
+            value="freelancer"
+          />
+          Part-time job holder.(Freelancer)<br />
+          <input
+            type="radio"
+            class="radio-inline"
+            name="gender"
+            value="applier"
+          />
+          Looking for a job.(Applier)<br />
+          <input
+            type="radio"
+            class="radio-inline"
+            name="gender"
+            value="unemployed"
+          />
+          I am a student.(Unemployed)
+        </div>
+        <label id="os-label"><b>Latest technology experience:</b></label>
+        <input type="checkbox" name="tech1" value="flutter" /> Flutter UI<br />
+        <input type="checkbox" name="tech2" value="nodejs" /> Node.js<br />
+        <input type="checkbox" name="tech3" value="tnflow" /> Tensorflow<br />
+        <input type="checkbox" name="tech3" value="git" /> Github<br />
+        <input type="checkbox" name="tech3" value="devops" /> Dev-Ops<br />
+        <label id="comments-label">Do you have any suggestion about this survey?</label>
+            <textarea style= height:120px;" class="form" placeholder="Please feel free to write a review..."></textarea>
+            <input id="submit" type="submit">
+      </form>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>

@@ -1,0 +1,29 @@
+input,
+label {
+  display: block;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+form {
+  margin: 5rem;
+}
+
+#checkout {
+  padding: 10px 15px;
+  margin: 0 0 1rem 0;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#checkout:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid;
+}

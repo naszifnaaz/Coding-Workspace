@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMDB APP</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: white;
+      }
+
+      nav {
+        background-color: black;
+        padding: 1.2rem;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: space-between;
+      }
+
+      #logo {
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding-left: 20px;
+      }
+
+      #search-button {
+        padding: 10px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        margin-right: 2rem;
+        cursor: pointer;
+      }
+
+      #search-movie {
+        padding: 5px;
+        margin-right: 0.5rem;
+      }
+      /* Movie List */
+      #movies {
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .poster {
+        width: 400px;
+        height: 550px;
+      }
+
+      .title {
+        font-size: 1rem;
+        color: black;
+        font-weight: bold;
+      }
+      .release-date {
+        color: black;
+      }
+      .rating {
+        font-size: 1rem;
+        text-align: right;
+        margin-bottom: 1.5rem;
+        position: relative;
+        top: -2rem;
+      }
+      .recommend {
+        font-weight: bold;
+        background-color: yellow;
+        padding: 10px;
+      }
+      #ooops {
+        margin-top: 5rem;
+        width: 40%;
+        height: 40%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div id="logo">OMDB</div>
+      <div id="search">
+        <input type="text" name="search" id="search-movie" />
+        <button id="search-button" onclick="searchMovie()">SEARCH</button>
+      </div>
+    </nav>
+    <div id="movies"></div>
+  </body>
+</html>
+
+<script>
+  async function searchMovie() {
+    try {
+      var searched = document.querySelector("#search-movie").value;
+      console.log(searched);
+
+      var url = `http://www.omdbapi.com/?apikey=43c66e10&s=${searched}`;
+      var results = await fetch(url);
+      var data = await results.json();
+      var movieData = data.Search;
+
+      renderMovie(movieData);
+    } catch (err) {
+      console.log(err);
+      var oops = document.createElement("img");
+      oops.setAttribute("id", "ooops");
+      oops.setAttribute(
+        "src",
+        "https://freefrontend.com/assets/img/html-funny-404-pages/SVG-Animation-404-Page.gif"
+      );
+      document.querySelector("#movies").append(oops);
+    }
+  }
+
+  function renderMovie(movieData) {
+    document.querySelector("#movies").innerHTML = "";
+    movieData.map(function (elem) {
+      console.log(elem);
+      var movie = document.createElement("div");
+      movie.setAttribute("class", "movie");
+
+      var poster = document.createElement("img");
+      poster.setAttribute("src", elem.Poster);
+      poster.setAttribute("class", "poster");
+
+      var title = document.createElement("p");
+      title.textContent = elem.Title;
+      title.setAttribute("class", "title");
+
+      var date = document.createElement("p");
+      date.textContent = elem.Year;
+      date.setAttribute("class", "release-date");
+
+      var rating = document.createElement("p");
+      var rate = Math.floor(Math.random() * 10) + 3;
+      rating.textContent = `Rating ${rate}`;
+      rating.setAttribute("class", "rating");
+
+      var recommend = document.createElement("p");
+      recommend.setAttribute("class", "recommend");
+      if (rate >= 8) {
+        recommend.textContent = "RECOMMENDED";
+      } else recommend.textContent = "";
+
+      movie.append(recommend, poster, title, date, rating);
+      document.querySelector("#movies").append(movie);
+    });
+  }
+</script>

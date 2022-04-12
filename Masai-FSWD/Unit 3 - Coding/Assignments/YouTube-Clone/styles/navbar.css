@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  border: 1px solid;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#left-menu {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+#yt-logo {
+  width: 100px;
+  height: 55px;
+  margin-left: 1rem;
+}
+
+#search-field {
+  display: flex;
+}
+
+#search {
+  width: 400px;
+  padding: 5px;
+}
+#search-logo {
+  background-color: whitesmoke;
+  padding: 5px 20px;
+  border: 1px solid;
+}
+
+#search-logo:hover {
+  background-color: lightgray;
+}
+
+#logo-user i {
+  margin: 0 1rem;
+}
+
+#logo-user {
+  margin-right: 2rem;
+}

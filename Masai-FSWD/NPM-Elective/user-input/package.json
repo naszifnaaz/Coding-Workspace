@@ -1,0 +1,15 @@
+{
+  "name": "user-input",
+  "version": "1.0.0",
+  "description": "user input using commander package",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Muhammed Nasif",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^9.0.0"
+  }
+}

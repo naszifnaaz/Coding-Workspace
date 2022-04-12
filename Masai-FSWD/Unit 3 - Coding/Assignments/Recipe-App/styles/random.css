@@ -1,0 +1,38 @@
+#container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.right {
+  position: relative;
+  top: -2rem;
+  height: fit-content;
+}
+.thumbnail {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.instruction {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  width: 600px;
+  font-size: 1.1rem;
+  text-align: justify;
+  max-height: 400px;
+  /* overflow: hidden */
+}

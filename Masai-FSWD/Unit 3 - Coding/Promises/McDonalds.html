@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>McDonalds</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1006%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(255%2c 100%2c 100%2c 1)'%3e%3c/rect%3e%3cpath d='M1536 560L0 560 L0 356.69Q44.5 329.19%2c 72 373.7Q87.31 269.01%2c 192 284.32Q258.46 230.78%2c 312 297.24Q359.57 272.81%2c 384 320.39Q443.5 307.89%2c 456 367.4Q485.2 324.6%2c 528 353.8Q543.31 297.11%2c 600 312.42Q650.6 243.02%2c 720 293.62Q776.42 278.05%2c 792 334.47Q862.84 285.31%2c 912 356.14Q940.7 264.84%2c 1032 293.54Q1074.71 264.25%2c 1104 306.97Q1171.51 254.48%2c 1224 321.99Q1308.44 286.44%2c 1344 370.88Q1374.71 329.59%2c 1416 360.3Q1448.29 272.59%2c 1536 304.88z' fill='rgba(145%2c 196%2c 131%2c 1)'%3e%3c/path%3e%3cpath d='M1512 560L0 560 L0 361.91Q61.23 303.14%2c 120 364.37Q195.25 319.63%2c 240 394.88Q315.51 350.39%2c 360 425.91Q402.21 396.12%2c 432 438.33Q479.34 365.67%2c 552 413.01Q580.06 369.07%2c 624 397.13Q674.65 327.78%2c 744 378.43Q800.88 363.31%2c 816 420.2Q869.59 353.78%2c 936 407.37Q983.61 382.98%2c 1008 430.59Q1008.81 359.39%2c 1080 360.2Q1130.3 338.5%2c 1152 388.8Q1180.58 345.38%2c 1224 373.96Q1279.28 357.24%2c 1296 412.51Q1343.06 387.57%2c 1368 434.63Q1374.07 368.7%2c 1440 374.77Q1481.71 344.48%2c 1512 386.18z' fill='rgba(255%2c 225%2c 98%2c 1)'%3e%3c/path%3e%3cpath d='M1560 560L0 560 L0 426.65Q75.3 429.95%2c 72 505.26Q114.17 475.43%2c 144 517.6Q157.69 459.29%2c 216 472.97Q239.44 424.42%2c 288 447.86Q370.26 410.12%2c 408 492.38Q410.03 422.41%2c 480 424.44Q543.05 367.5%2c 600 430.55Q666 424.56%2c 672 490.56Q713.54 412.1%2c 792 453.64Q838.18 427.82%2c 864 474Q906.31 396.31%2c 984 438.62Q1072.03 406.65%2c 1104 494.68Q1125.61 444.28%2c 1176 465.89Q1219.32 437.21%2c 1248 480.53Q1271.01 431.54%2c 1320 454.56Q1386.74 401.31%2c 1440 468.05Q1484.64 392.69%2c 1560 437.34z' fill='%23356cb1'%3e%3c/path%3e%3cpath d='M1512 560L0 560 L0 553.16Q12.85 494.01%2c 72 506.86Q100.9 463.76%2c 144 492.67Q239.55 468.22%2c 264 563.77Q300.19 479.96%2c 384 516.16Q407.84 468%2c 456 491.84Q546.16 462%2c 576 552.17Q651.41 507.58%2c 696 582.98Q708.13 523.12%2c 768 535.25Q786.72 481.97%2c 840 500.69Q888.17 476.87%2c 912 525.04Q964.92 505.96%2c 984 558.88Q1010.23 513.11%2c 1056 539.34Q1107 470.34%2c 1176 521.33Q1268.18 493.52%2c 1296 585.7Q1322.04 539.74%2c 1368 565.77Q1381.26 507.02%2c 1440 520.28Q1485.86 494.13%2c 1512 539.99z' fill='white'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1006'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        align-items: center;
+      }
+
+      #head {
+        font-size: 3rem;
+        text-align: center;
+        color: white;
+      }
+      .item {
+        width: 300px;
+        height: 300px;
+      }
+      form {
+        display: flex;
+        justify-content: space-around;
+      }
+      button {
+        width: 150px;
+        height: 50px;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      #order-btn {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+      #orders {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 2rem;
+      }
+      h2 {
+        background-color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="head">McDonald's</h1>
+    <form>
+      <!-- Burger -->
+      <label for="#burger"
+        ><img
+          src="https://image.freepik.com/free-vector/cheese-burger-cartoon-icon-illustration_138676-2450.jpg"
+          class="item"
+          id="burgers"
+      /></label>
+      <input type="checkbox" name="food" id="#burger" />
+      <!-- Pizza -->
+      <label for="#pizza"
+        ><img
+          src="https://image.freepik.com/free-vector/pizza-slice-cartoon-illustration_138676-1499.jpg"
+          class="item"
+          id="pizzas"
+      /></label>
+      <input type="checkbox" name="food" id="#pizza" />
+      <!-- Fries -->
+      <label for="#fries"
+        ><img
+          src="https://cdn.dribbble.com/users/1414920/screenshots/15045610/dribbble-01_4x.jpg"
+          class="item"
+          id="friess"
+      /></label>
+      <input type="checkbox" name="food" id="#fries" />
+      <!-- Cola -->
+      <label for="#cola"
+        ><img
+          src="https://cdn.dribbble.com/users/6364112/screenshots/14858037/media/7a5c785780edd8b7f037af9345db1642.jpg?compress=1&resize=400x300"
+          class="item"
+          id="colas"
+      /></label>
+      <input type="checkbox" name="food" id="#cola" />
+    </form>
+    <div id="order-btn">
+      <button onclick="order()">ORDER</button>
+    </div>
+    <div id="orders"></div>
+  </body>
+</html>
+
+<script>
+  let orders = [];
+  let url = document.getElementById("burgers");
+  function order() {
+    var burger = document.getElementById("#burger");
+    console.log(burger);
+    var pizza = document.getElementById("#pizza");
+    var fries = document.getElementById("#fries");
+    var cola = document.getElementById("#cola");
+
+    if (burger.checked == true) {
+      let url = document.getElementById("burgers");
+      let attr = url.getAttribute("src");
+      orders.push(attr);
+    }
+    if (pizza.checked == true) {
+      let url = document.getElementById("pizzas");
+      let attr = url.getAttribute("src");
+      orders.push(attr);
+    }
+    if (fries.checked == true) {
+      let url = document.getElementById("friess");
+      let attr = url.getAttribute("src");
+      orders.push(attr);
+    }
+    if (cola.checked == true) {
+      let url = document.getElementById("colas");
+      let attr = url.getAttribute("src");
+      orders.push(attr);
+    }
+    console.log(orders);
+
+    var order_promise = new Promise(function (reslove, reject) {
+      setTimeout(function () {
+        if (orders.length != 0) reslove(orders);
+        else reject("No Orders");
+      }, 5000);
+    });
+
+    order_promise.then(function (orders) {
+      alert("Order Ready!");
+      document.querySelector("#orders").innerHTML = "";
+      orders.map(function (elem) {
+        var image = document.createElement("img");
+        image.setAttribute("src", elem);
+        image.setAttribute("class", "item");
+        document.querySelector("#orders").append(image);
+      });
+    });
+
+    order_promise.catch(function (err) {
+      alert(err);
+      var alert_it = document.querySelector("#orders");
+      var msg = document.createElement("h2");
+      msg.textContent = "You have not ordered anything!";
+      alert_it.append(msg);
+    });
+  }
+</script>

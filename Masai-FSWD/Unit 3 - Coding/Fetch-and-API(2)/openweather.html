@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Weather API</title>
+  </head>
+
+  <body></body>
+</html>
+
+<script>
+  let key = "0a0e75a5fc9539c7b8d9432bb6c0bce6";
+  let city = "Kannur";
+  async function weatherData() {
+    try {
+      let result = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`
+      );
+      let data = await result.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  weatherData();
+</script>

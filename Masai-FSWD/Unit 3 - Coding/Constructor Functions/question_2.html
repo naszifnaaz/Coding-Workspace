@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONSTRUCTOR FUNCTIONS</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        color: black;
+        font-weight: bold;
+        text-align: center;
+      }
+      table,
+      td,
+      th {
+        border: 1px solid;
+        text-align: center;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <h1>STUDENT FORM</h1>
+      <form id="studentForm">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter Name" id="name" />
+        <label for="number">Number</label>
+        <input type="number" id="number" placeholder="Enter Number" />
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="Enter City" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  var form = document.querySelector("#studentForm");
+  form.addEventListener("submit", submitDetails);
+
+  var studentList = JSON.parse(localStorage.getItem("studentList")) || [];
+  renderTable(studentList);
+
+  function submitDetails(e) {
+    e.preventDefault();
+    var name = document.querySelector("#name").value;
+    var number = document.querySelector("#number").value;
+    var city = document.querySelector("#city").value;
+    var student = new Student(name, number, city);
+    studentList.push(student);
+    localStorage.setItem("studentList", JSON.stringify(studentList));
+    renderTable(studentList);
+  }
+
+  function Student(name, number, city) {
+    this.name = name;
+    this.number = number;
+    this.city = city;
+  }
+
+  function renderTable(studentList) {
+    var table = document.querySelector("tbody");
+    table.innerHTML = "";
+    studentList.map(function (elem) {
+      var tr = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      td1.textContent = elem.name;
+
+      var td2 = document.createElement("td");
+      td2.textContent = elem.number;
+
+      var td3 = document.createElement("td");
+      td3.textContent = elem.city;
+
+      tr.append(td1, td2, td3);
+      table.append(tr);
+    });
+  }
+</script>

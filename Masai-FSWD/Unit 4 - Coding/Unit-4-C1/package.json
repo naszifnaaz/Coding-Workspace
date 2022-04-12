@@ -1,0 +1,14 @@
+{
+  "name": "unit4-c1",
+  "version": "1.0.0",
+  "description": "Unit 4 C1 Evaluation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammed Nasif",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

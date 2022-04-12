@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      #movie-details {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .movie-title {
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      .release-year {
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="movie-details"></div>
+  </body>
+</html>
+
+<script>
+  let movie = JSON.parse(localStorage.getItem("currentMovie")) || [];
+
+  var container = document.createElement("div");
+  container.setAttribute("id", "container");
+
+  var image = document.createElement("img");
+  image.setAttribute("class", "movie-poster");
+  image.setAttribute("src", movie.Poster);
+
+  var title = document.createElement("p");
+  title.setAttribute("class", "movie-title");
+  title.textContent = movie.Title;
+
+  var year = document.createElement("p");
+  year.setAttribute("class", "release-year");
+  year.textContent = movie.Year;
+
+  container.append(image, title, year);
+  var movie_details = document.getElementById("movie-details");
+  movie_details.append(container);
+</script>

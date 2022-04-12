@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises with then and catch</title>
+  </head>
+  <body>
+    <select name="food" id="food">
+      <option value="Burger">Burger</option>
+      <option value="Pizza">Pizza</option>
+      <option value="Fries">Fries</option>
+      <option value="Cola">Cola</option>
+    </select>
+    <button onclick="order()">Order</button>
+  </body>
+</html>
+
+<script>
+  var open = false;
+  async function order() {
+    try {
+      var order = document.querySelector("#food").value;
+
+      let food_promise = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (open == true) resolve(`${order} is ready!`);
+          else reject(`Store is closed!`);
+        }, 5000);
+      });
+
+      //handling promises with async await
+
+      var response = await food_promise;
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+</script>

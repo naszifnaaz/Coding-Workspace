@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Ali</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: #d3cce3;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #e9e4f0, #d3cce3);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #e9e4f0, #d3cce3);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      #title {
+        margin: 20px 0 0 0;
+        font-size: 3rem;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      #subtitle {
+        margin: 0 0 20px 0;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      #image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80%;
+        height: auto;
+      }
+
+      #img-caption {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .bio,
+      ul {
+        font-family: monospace;
+        font-size: 1.2rem;
+        margin: 5% 10%;
+        text-align: justify;
+      }
+
+      #timeline li {
+        font-family: monospace;
+      }
+
+      li {
+        font-family: monospace;
+        list-style: none;
+      }
+
+      span {
+        margin-right: 2rem;
+      }
+
+      #timeline {
+        text-align: center;
+        font-size: 2rem;
+      }
+      #link {
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: monospace;
+        margin: -1rem 0 2rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <p id="title">Muhammad Ali</p>
+      <p id="subtitle">Float like a butterfly, sting like a bee.</p>
+      <div id="img-div">
+        <img
+          src="https://wallpapercave.com/wp/wp2600403.jpg"
+          alt="Muhammad Ali Beating Sonny Liston"
+          id="image"
+        />
+        <figcaption id="img-caption">
+          Muhammad Ali Beating Sonny Liston on 25th February 1964
+        </figcaption>
+      </div>
+
+      <div id="tribute-info">
+        <p class="bio">
+          Muhammad Ali, original name Cassius Marcellus Clay, Jr., (born January
+          17, 1942, Louisville, Kentucky, U.S.—died June 3, 2016, Scottsdale,
+          Arizona), American professional boxer and social activist. Ali was the
+          first fighter to win the world heavyweight championship on three
+          separate occasions; he successfully defended this title 19 times. Ali
+          was one of the greatest boxers in history, the first fighter to win
+          the world heavyweight championship on three separate occasions. In
+          addition, he was known for his social message of black pride and black
+          resistance to white domination and for refusing induction into the
+          U.S. Army during the Vietnam War.
+        </p>
+
+        <p id="timeline">Athletic Awards and Accomplishments</p>
+        <ul>
+          <li><span>1959</span> - National Amateur Athletic Union champion</li>
+          <li>
+            <span>1960</span> - National Golden Gloves Light Heavyweight
+            Champion
+          </li>
+          <li><span>1960</span> - National Amateur Athletic Union champion</li>
+          <li>
+            <span>1960</span> - Gold medal, Rome Olympics, light-heavyweight
+            boxing
+          </li>
+          <li><span>1964</span> - World Heavyweight Champion</li>
+          <li><span>1970</span> - Dr. Martin Luther King Memorial Award</li>
+          <li><span>1974</span> - Sportsman of the Year, Sports Illustrated</li>
+          <li>
+            <span>1974</span> - Fighter of the Year, Boxing Writers Association
+          </li>
+          <li><span>1974</span> - World Heavyweight Champion</li>
+          <li><span>1978</span> - World Heavyweight Champion</li>
+          <li>
+            <span>1979</span> - Honorary Doctorate of Humane Letters, Texas
+            Southern University
+          </li>
+          <li>
+            <span>1979</span> - Street named after him in Louisville, Kentucky
+          </li>
+          <li>
+            <span>1985</span> - Recognized for long, meritorious service, World
+            Boxing Association
+          </li>
+          <li><span>1987</span> - Elected to Boxing Hall of Fame</li>
+          <li>
+            <span>1990</span> - Inducted into International Boxing Hall of Fame
+          </li>
+          <li><span>1996</span> - Lights Olympic torch, Atlanta</li>
+          <li><span>1997</span> - Arthur Ashe Award for Courage, ESPN</li>
+          <li><span>1997</span> - Essence Living Legend Award</li>
+        </ul>
+      </div>
+
+      <p id="link">
+        Read more about Ali
+        <a
+          href="https://en.wikipedia.org/wiki/Muhammad_Ali"
+          target="_blank"
+          id="tribute-link"
+          >here</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
