@@ -1,0 +1,30 @@
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items:center;
+  background-color:black;
+  color: white;
+}
+
+#logo{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#nav-links{
+  list-style: none;
+}
+
+.nav-link{
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+#contact-btn{
+  background-color: aqua;
+  padding: 10px 25px;
+  font-weight: bold; 
+  border-radius: 10px; 
+  border: none;
+}
