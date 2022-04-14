@@ -1,0 +1,20 @@
+.todo-list{
+    display: flex;
+    justify-content: center;
+}
+
+.list-items{
+    list-style-type: none;
+    background-color:lightgray;
+    border:1px solid; 
+    width: 30%; 
+}
+
+.btn-danger{
+    display: inline;
+    background-color:red;
+    color: white;
+    font-weight:bold;
+    border: none;
+    border-bottom: 2px solid black;
+}
