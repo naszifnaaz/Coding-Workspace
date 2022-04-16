@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "Learn React"
+    },
+    {
+      "id": 2,
+      "todo": "Learn TypeScript"
+    },
+    {
+      "id": 3,
+      "todo": "Learn Vue"
+    },
+    {
+      "todo": "Take a break",
+      "id": 4
+    },
+    {
+      "todo": "Chai Time",
+      "id": 5
+    }
+  ]
+}
