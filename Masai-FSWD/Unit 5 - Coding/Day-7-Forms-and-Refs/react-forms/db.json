@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "name": "John",
+      "age": "24",
+      "address": "Kerala",
+      "department": "tester",
+      "salary": "25000",
+      "marital": "married",
+      "id": 1
+    },
+    {
+      "name": "Corey",
+      "age": "32",
+      "address": "New York",
+      "department": "manager",
+      "salary": "3000",
+      "marital": "married",
+      "id": 2
+    }
+  ]
+}
