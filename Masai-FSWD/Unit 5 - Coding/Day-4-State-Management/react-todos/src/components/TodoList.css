@@ -1,0 +1,6 @@
+.todo-items {
+    padding: 5px;
+    background-color:rgb(9, 0, 0);
+    color : white;
+    cursor : pointer;
+}
