@@ -15,7 +15,7 @@ export const Admin = () => {
     team: "",
   });
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
