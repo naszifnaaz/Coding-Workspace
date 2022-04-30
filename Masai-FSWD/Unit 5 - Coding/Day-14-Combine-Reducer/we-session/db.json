@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "title": "Learn Redux",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "Learn React",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "Learn TypeScript",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "Have Chai",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "Go for Walk",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "Go for Walk",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "Play",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "Game",
+      "status": false,
+      "id": 8
+    }
+  ]
+}
